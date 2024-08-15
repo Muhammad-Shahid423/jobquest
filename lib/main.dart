@@ -1,26 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:jobquest/controllers/exports.dart';
-import 'package:jobquest/views/ui/onboarding/onboarding_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'views/common/exports.dart';
+import 'views/di/provider_setup.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => OnBoardNotifier()),
-    ChangeNotifierProvider(create: (context) => LoginNotifier()),
-    ChangeNotifierProvider(create: (context) => ZoomNotifier()),
-    ChangeNotifierProvider(create: (context) => SignUpNotifier()),
-    ChangeNotifierProvider(create: (context) => JobsNotifier()),
-    ChangeNotifierProvider(create: (context) => BookMarkNotifier()),
-    ChangeNotifierProvider(create: (context) => ImageUploader()),
-    ChangeNotifierProvider(create: (context) => ProfileNotifier()),
-  ], child: const MyApp()));
+  runApp(MultiProvider(providers: providers, child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
