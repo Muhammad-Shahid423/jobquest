@@ -21,6 +21,9 @@ jobs:
       # Clones the project on the machine
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '12'
 
       # Installs flutter and related dependency on this machine
       - name: Setup Flutter
