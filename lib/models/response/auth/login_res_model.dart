@@ -5,21 +5,25 @@ LoginResponseModel loginResponseModelFromJson(String str) => LoginResponseModel.
 String loginResponseModelToJson(LoginResponseModel data) => json.encode(data.toJson());
 
 class LoginResponseModel {
+    final String id;
+    final String profile;
+    final String token;
+
     LoginResponseModel({
         required this.id,
-        required this.userToken,
+        required this.profile,
+        required this.token,
     });
-
-    final String id;
-    final String userToken;
 
     factory LoginResponseModel.fromJson(Map<String, dynamic> json) => LoginResponseModel(
         id: json["_id"],
-        userToken: json["userToken"],
+        profile: json["profile"],
+        token: json["token"],
     );
 
     Map<String, dynamic> toJson() => {
         "_id": id,
-        "userToken": userToken,
+        "profile": profile,
+        "token": token,
     };
 }

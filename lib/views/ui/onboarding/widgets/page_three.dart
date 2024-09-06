@@ -53,6 +53,7 @@ class PageThree extends StatelessWidget {
                     ),
                     CustomOutlineBtn(
                       onPressed: () {
+
                         Get.to(() => const RegistrationPage());
                       },
                       width: width * 0.4,

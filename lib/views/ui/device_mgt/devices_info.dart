@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jobquest/main.dart';
 import 'package:provider/provider.dart';
 
 import '../../../controllers/exports.dart';
@@ -70,7 +71,8 @@ class DeviceManagement extends StatelessWidget {
                     onTap: () {
                       zoomnotifier.currentIndex = 0;
                       onboardnotifier.isLastPage = false;
-                      Get.to(() => const OnBoardingScreen());
+                      // Get.to(() => const OnBoardingScreen());
+                      Get.to(() => defaultHome);
                     },
                     child: Align(
                       alignment: Alignment.bottomCenter,
